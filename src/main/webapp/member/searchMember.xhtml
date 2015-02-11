@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>会員検索</title>
+    <style>
+      .err{
+            font-size: 13px;
+            color: red;
+      }
+  </style>
+</h:head>
+<h:body>
+  <h1>会員検索</h1>
+  <hr/>
+  <h:form id="newForm">
+    <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
+                infoStyle="color: blue" globalOnly="true"/>
+
+    <h:panelGrid columns="3">
+        <f:validateBean validationGroups="com.tink.mpj.common.groups.BeforeSearch">
+            <h:outputLabel value="ID　: "/>
+            <h:inputText id="seqNo" value="#{memberAdmin.member.seqNo}"/>
+            <h:message class="err" for="seqNo"/>
+        </f:validateBean>
+    </h:panelGrid>
+
+    <h:commandButton value="検　索" action="#{memberAdmin.search}"/>
+    <!-- <a href="/MPJ-web/log">log</a> -->
+
+  </h:form>
+  <hr/>
+  <h:outputText value="Mall Parking System on Java EE" style="font-style: italic"/>
+  <h:outputLink value="/MPJ/index.html">HOME</h:outputLink>
+
+</h:body>
+</html>

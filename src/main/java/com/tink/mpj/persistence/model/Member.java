@@ -2,33 +2,39 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tink.mpj.member.beans;
+package com.tink.mpj.persistence.model;
 
 import com.tink.mpj.common.constraint.CarNo;
 import com.tink.mpj.common.constraint.Email;
 import com.tink.mpj.common.constraint.Required;
 import com.tink.mpj.common.constraint.ZipCode;
-import javax.validation.constraints.Digits;
+import com.tink.mpj.common.groups.BeforeSave;
+import com.tink.mpj.common.groups.BeforeSearch;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
  * @author shearer
  */
+@Entity(name = "MEMBER")//テーブル名を指定
 public class Member {
 
-    @NotNull
-    private String seqNo;
-    @Required(name="名前")
+    @NotNull(groups = BeforeSearch.class)
+    @Id // primary key
+    @GeneratedValue // DBによって自動作成
+    private long seqNo;
+    @Required(name="名前", groups = BeforeSave.class)
     private String name;
-    @Required(name="Email")
-    @Email
+    @Required(name="Email", groups = BeforeSave.class)
+    @Email(groups = BeforeSave.class)
     private String email;
-    @Required(name="住所")
+    @Required(name="住所", groups = BeforeSave.class)
     private String address;
-    @Required(name="郵便番号")
-    @ZipCode
+    @Required(name="郵便番号", groups = BeforeSave.class)
+    @ZipCode(groups = BeforeSave.class)
     private String zipCode;
     @CarNo
     private String carNo;
@@ -38,11 +44,11 @@ public class Member {
         return "Member{" + "seqNo=" + seqNo + ", name=" + name + ", email=" + email + ", address=" + address + ", zipCode=" + zipCode + ", carNo=" + carNo + '}';
     }
 
-    public String getSeqNo() {
+    public long getSeqNo() {
         return seqNo;
     }
 
-    public void setSeqNo(String seqNo) {
+    public void setSeqNo(long seqNo) {
         this.seqNo = seqNo;
     }
 
