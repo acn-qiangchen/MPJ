@@ -90,8 +90,8 @@ public class MemberAdmin implements Serializable {
         try{
             logger.debug(member);
 
-            //TODO JPA Validation
-            member.setEmail("");
+            //uncomment to test JPA Validation
+            //member.setEmail("");
             ejb.create(member);
             //member = new Member();
             conversation.end();
