@@ -5,10 +5,13 @@
 package com.tink.mpj.persistence.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -24,6 +27,17 @@ public class Purchase implements Serializable {
     private Long tranId;
     private String status;
     private int amount;
+    @Temporal(TemporalType.TIME)
+    private Date createTime;
+
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
     public Long getMemberId() {
         return memberId;

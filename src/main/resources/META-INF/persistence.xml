@@ -10,8 +10,8 @@
       <!-- vendor property-->
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
       <!-- standard JPA2.1 property -->
-      <property name="javax.persistence.validation.group.pre-persist" value="com.tink.mpj.common.groups.BeforeSave"/>
-      <property name="javax.persistence.validation.group.pre-update" value="com.tink.mpj.common.groups.BeforeSave"/>
-    </properties>
+      <property name="javax.persistence.validation.group.pre-persist" value="com.tink.mpj.common.groups.BeforeSave,javax.validation.groups.Default"/>
+      <property name="javax.persistence.validation.group.pre-update" value="com.tink.mpj.common.groups.BeforeSave,javax.validation.groups.Default"/>
+      </properties>
   </persistence-unit>
 </persistence>

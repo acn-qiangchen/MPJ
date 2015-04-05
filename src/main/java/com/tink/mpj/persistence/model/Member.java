@@ -13,6 +13,8 @@ import com.tink.mpj.common.groups.BeforeSearch;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -20,6 +22,10 @@ import javax.validation.constraints.NotNull;
  * @author shearer
  */
 @Entity(name = "MEMBER")//テーブル名を指定
+@NamedQueries({
+    @NamedQuery(name="queryByEmail", query="SELECT m FROM MEMBER m WHERE m.email=:email")
+}
+)
 public class Member {
 
     @NotNull(groups = BeforeSearch.class)

@@ -4,11 +4,12 @@
  */
 package com.tink.mpj.business.ejb;
 
-import com.tink.mpj.persistence.jpa.AbstractFacade;
 import com.tink.mpj.persistence.model.Member;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -26,6 +27,17 @@ public class MemberFacade extends AbstractFacade<Member> {
 
     public MemberFacade() {
         super(Member.class);
+    }
+    
+    public Member findbyEmail(String email){
+        Query query = em.createNamedQuery("queryByEmail");
+        query.setParameter("email", email);
+        List<Member> result = query.getResultList();
+        if(result.size() > 0){
+            return result.get(0);
+        }
+        
+        return new Member();
     }
     
 }

@@ -4,11 +4,15 @@
  */
 package com.tink.mpj.persistence.model;
 
+import com.tink.mpj.common.constraint.Email;
+import com.tink.mpj.common.constraint.Required;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -20,9 +24,11 @@ public class Plan implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Required
     private String planId;
     private String kbn;
     private String unitKbn;
+    @Min(0)
     private int unitValue;
     private int totalValue;
     private int duration;

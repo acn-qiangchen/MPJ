@@ -75,7 +75,13 @@ public class MemberAdmin implements Serializable {
     // 検索ボタンAction
     //TODO Search group Bean Validationを適用 
     public String search(){
-        member = ejb.find(member.getSeqNo());
+        if(member.getSeqNo() > 0){
+            member = ejb.find(member.getSeqNo());
+        }else 
+        if(member.getEmail() != null && member.getEmail().length() > 0){
+            member = ejb.findbyEmail(member.getEmail());
+        }
+        
         return "confirm.xhtml";
     }
 

@@ -25,6 +25,10 @@
             <h:outputLabel value="ID　: "/>
             <h:inputText id="seqNo" value="#{memberAdmin.member.seqNo}"/>
             <h:message class="err" for="seqNo"/>
+
+            <h:outputLabel value="Email : "/>
+            <h:inputText id="email" value="#{memberAdmin.member.email}"/>
+            <h:message class="err" for="email"/>
         </f:validateBean>
     </h:panelGrid>
 
@@ -33,8 +37,8 @@
 
   </h:form>
   <hr/>
-  <h:outputText value="Mall Parking System on Java EE" style="font-style: italic"/>
-  <h:outputLink value="/MPJ/index.html">HOME</h:outputLink>
+  <h:outputText value="Mall Parking System on Java EE" style="font-style: italic"/><br/>
+  <h:outputLink value="/MPJ">HOME</h:outputLink>
 
 </h:body>
 </html>

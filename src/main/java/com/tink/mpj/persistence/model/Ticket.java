@@ -27,9 +27,9 @@ public class Ticket implements Serializable {
     private String carNo;
     private String memberId;
     private String planId;
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date inTime;
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date outTime;
     private int purAmount;
     private int fee;
