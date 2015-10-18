@@ -3,54 +3,44 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <title>新規会員登録</title>
-    <link rel="stylesheet" type="text/css" href="/MPJ/jsfcrud.faces" />
-    <style>
-      .err{
-            font-size: 13px;
-            color: red;
-      }
-  </style>
-</h:head>
-<h:body>
-  <h1>新規会員登録</h1>
-  <hr/>
-  <h:form id="newForm">
-    <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
-                infoStyle="color: blue" globalOnly="true"/>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="/template.xhtml">
+    <ui:define name="title">
+        <h:outputText value="新規会員登録"></h:outputText>
+    </ui:define>
+    <ui:define name="body">
+        <h:form id="newForm">
+          <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
+                      infoStyle="color: blue" globalOnly="true"/>
 
-    <h:panelGrid columns="3">
-        <f:validateBean validationGroups="com.tink.mpj.common.groups.BeforeSave">
-            <h:outputLabel value="名前　: "/>
-            <h:inputText id="name" value="#{memberAdmin.member.name}"/>
-            <h:message class="err" for="name"/>
+          <h:panelGrid columns="3">
+              <f:validateBean validationGroups="com.tink.mpj.common.groups.BeforeSave">
+                  <h:outputLabel value="名前　: "/>
+                  <h:inputText id="name" value="#{memberAdmin.member.name}"/>
+                  <h:message class="err" for="name"/>
 
-            <h:outputLabel value="Email : "/>
-            <h:inputText id="email" value="#{memberAdmin.member.email}"/>
-            <h:message class="err" for="email"/>
+                  <h:outputLabel value="Email : "/>
+                  <h:inputText id="email" value="#{memberAdmin.member.email}"/>
+                  <h:message class="err" for="email"/>
 
-            <h:outputLabel value="〒　　: "/>
-            <h:inputText id="zipCode" value="#{memberAdmin.member.zipCode}"/>
-            <h:message class="err" for="zipCode"/>
+                  <h:outputLabel value="〒　　: "/>
+                  <h:inputText id="zipCode" value="#{memberAdmin.member.zipCode}"/>
+                  <h:message class="err" for="zipCode"/>
 
-            <h:outputLabel value="住所　: "/>
-            <h:inputText id="address" value="#{memberAdmin.member.address}"/>
-            <h:message class="err" for="address"/>
+                  <h:outputLabel value="住所　: "/>
+                  <h:inputText id="address" value="#{memberAdmin.member.address}"/>
+                  <h:message class="err" for="address"/>
 
-            <h:outputLabel value="車番　: "/>
-            <h:inputText id="carNo" value="#{memberAdmin.member.carNo}"/>
-            <h:message class="err" for="carNo"/>
-        </f:validateBean>
-    </h:panelGrid>
-
-    <h:commandButton value="登　録" action="#{memberAdmin.add}"/>
-
-  </h:form>
-  <hr/>
-  <h:outputText value="Mall Parking System on Java EE" style="font-style: italic"/><br/>
-  <h:outputLink value="/MPJ">HOME</h:outputLink>
-
-</h:body>
+                  <h:outputLabel value="車番　: "/>
+                  <h:inputText id="carNo" value="#{memberAdmin.member.carNo}"/>
+                  <h:message class="err" for="carNo"/>
+              </f:validateBean>
+          </h:panelGrid>
+          <br/>
+          <h:commandButton value="登　録" action="#{memberAdmin.add}"/>
+        </h:form>
+    </ui:define>
+        
+    </ui:composition>
 </html>
