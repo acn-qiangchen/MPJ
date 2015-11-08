@@ -12,6 +12,7 @@ com/tink/mpj/common/logging/LoggingProducer.class
 com/tink/mpj/persistence/model/Plan.class
 com/tink/mpj/app/bean/util/JsfCrudELResolver$JsfCrudClass.class
 com/tink/mpj/common/constraint/Email$List.class
+com/tink/mpj/faces/component/ComponentInputDate.class
 com/tink/mpj/persistence/model/Ticket_.class
 com/tink/mpj/app/bean/TicketConverter.class
 com/tink/mpj/common/constraint/CarNoConstraintValidator.class
@@ -43,8 +44,9 @@ com/tink/sandbox/NewClass.class
 com/tink/mpj/app/bean/TicketController.class
 com/tink/mpj/common/util/TicketSeqNoGenerator.class
 com/tink/mpj/app/bean/MemberConverter.class
-com/tink/mpj/app/bean/util/JsfCrudELResolver$1.class
+com/tink/mpj/config/AppConfig.class
 com/tink/mpj/persistence/model/Purchase.class
+com/tink/mpj/app/bean/util/JsfCrudELResolver$1.class
 com/tink/mpj/common/constraint/Required.class
 com/tink/mpj/common/qualifier/MonitoringLog.class
 com/tink/sandbox/App.class

@@ -6,5 +6,27 @@
         <locale-config>
             <default-locale>ja</default-locale>
         </locale-config>
+        <resource-library-contracts>
+            <contract-mapping>
+                <url-pattern>*</url-pattern>
+                <contracts>themeA</contracts>
+            </contract-mapping>
+        </resource-library-contracts>
     </application>
+    <managed-bean>
+        <managed-bean-name>appConfig</managed-bean-name>
+        <managed-bean-class>com.tink.mpj.config.AppConfig</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>theme</property-name>
+            <value>B</value>
+        </managed-property>
+    </managed-bean>
+    <navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-outcome>index</from-outcome>
+        <to-view-id>/home.xhtml</to-view-id>
+    </navigation-case>
+</navigation-rule>
 </faces-config>

@@ -1,46 +1,65 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <ui:composition template="/template.xhtml">
-    <ui:define name="title">
-        <h:outputText value="新規会員登録"></h:outputText>
-    </ui:define>
-    <ui:define name="body">
-        <h:form id="newForm">
-          <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
-                      infoStyle="color: blue" globalOnly="true"/>
+    <f:view contracts='#{appConfig.theme}' >
+        <ui:composition template="/template.xhtml">
+            <ui:define name="title">
+                <h:outputText value="新規会員登録"></h:outputText>
+            </ui:define>
+            <ui:define name="body">
+                <h:form id="newForm" p:role="form">
+                    <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
+                                infoStyle="color: blue" globalOnly="true"/>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <f:validateBean validationGroups="com.tink.mpj.common.groups.BeforeSave">
+                                <div class="form-group">
+                                    <h:outputLabel value="名前　: "/>
+                                    <h:inputText id="name" class="form-control" value="#{memberAdmin.member.name}" p:placeholder="enter name"/>
+                                    <h:message errorStyle="color: red" for="name"/>
+                                </div>
 
-          <h:panelGrid columns="3">
-              <f:validateBean validationGroups="com.tink.mpj.common.groups.BeforeSave">
-                  <h:outputLabel value="名前　: "/>
-                  <h:inputText id="name" value="#{memberAdmin.member.name}"/>
-                  <h:message class="err" for="name"/>
+                                <div class="form-group">
+                                    <h:outputLabel value="Email : "/>
+                                    <h:inputText id="email" class="form-control" value="#{memberAdmin.member.email}" p:placeholder="enter email (name@domain)" p:type="email"/>
+                                    <h:message errorStyle="color: red" for="email"/>                                
+                                </div>
 
-                  <h:outputLabel value="Email : "/>
-                  <h:inputText id="email" value="#{memberAdmin.member.email}"/>
-                  <h:message class="err" for="email"/>
+                                <div class="form-group">
+                                    <h:outputLabel value="〒　　: "/>
+                                    <h:inputText id="zipCode" class="form-control" value="#{memberAdmin.member.zipCode}" p:placeholder="enter post-code (123-4567)"/>
+                                    <h:message errorStyle="color: red" for="zipCode"/>                                
+                                </div>
 
-                  <h:outputLabel value="〒　　: "/>
-                  <h:inputText id="zipCode" value="#{memberAdmin.member.zipCode}"/>
-                  <h:message class="err" for="zipCode"/>
+                                <div class="form-group">
+                                    <h:outputLabel value="住所　: "/>
+                                    <h:inputText id="address" class="form-control" value="#{memberAdmin.member.address}" p:placeholder="enter address"/>
+                                    <h:message errorStyle="color: red" for="address"/>                                
+                                </div>
 
-                  <h:outputLabel value="住所　: "/>
-                  <h:inputText id="address" value="#{memberAdmin.member.address}"/>
-                  <h:message class="err" for="address"/>
+                                <div class="form-group">
+                                    <h:outputLabel value="車番　: "/>
+                                    <h:inputText id="carNo" class="form-control" value="#{memberAdmin.member.carNo}" p:placeholder="enter car-number (1234)"/>
+                                    <h:message errorStyle="color: red" for="carNo"/>                                
+                                </div>
+                            </f:validateBean>
 
-                  <h:outputLabel value="車番　: "/>
-                  <h:inputText id="carNo" value="#{memberAdmin.member.carNo}"/>
-                  <h:message class="err" for="carNo"/>
-              </f:validateBean>
-          </h:panelGrid>
-          <br/>
-          <h:commandButton value="登　録" action="#{memberAdmin.add}"/>
-        </h:form>
-    </ui:define>
-        
-    </ui:composition>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <br/>
+                    <div class="row text-center" >
+                        <h:commandButton class="btn btn-primary" value="登　録" action="#{memberAdmin.add}"/>
+                    </div>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+    </f:view>
 </html>

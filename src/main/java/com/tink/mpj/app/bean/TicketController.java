@@ -72,13 +72,13 @@ public class TicketController {
 
     public String listSetup() {
         reset(true);
-        return "ticket_list";
+        return "/ticket/List";
     }
 
     public String createSetup() {
         reset(false);
         ticket = new Ticket();
-        return "ticket_create";
+        return "/ticket/New";
     }
 
     public String create() {
@@ -112,11 +112,11 @@ public class TicketController {
     }
 
     public String detailSetup() {
-        return scalarSetup("ticket_detail");
+        return scalarSetup("/ticket/Detail");
     }
 
     public String editSetup() {
-        return scalarSetup("ticket_edit");
+        return scalarSetup("/ticket/Edit");
     }
 
     private String scalarSetup(String destination) {

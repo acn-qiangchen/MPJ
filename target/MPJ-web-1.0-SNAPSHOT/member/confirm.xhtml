@@ -1,56 +1,63 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://java.sun.com/jsp/jstl/core">
-<h:head>
-  <title>登録情報確認</title>
-  <link rel="stylesheet" type="text/css" href="/MPJ/jsfcrud.faces" />
-</h:head>
-<h:body>
-  <h1>登録情報確認</h1>
-  <hr/>
-  <h:form id="memberForm">
-    <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
-                infoStyle="color: blue" globalOnly="true"/>
-    <c:set var="member" value="#{memberAdmin.member}" />
-    <h:panelGrid columns="3">
-      <h:outputLabel value="会員番号 : "/>
-      <c:set var="seqNo" value="#{member.seqNo}" />
-      <c:if test="#{seqNo == null || seqNo == 0}" >
-          <c:set var="seqNo" value=" "/>
-      </c:if>
-      <h:outputText id="seqNo" value="#{seqNo}"/>
-      <h:message for="seqNo"/>
-      
-      <h:outputLabel value="名前 : "/>
-      <h:outputText id="name" value="#{member.name}"/>
-      <h:message for="name"/>
-
-      <h:outputLabel value="Email : "/>
-      <h:outputText id="email" value="#{member.email}"/>
-      <h:message for="email"/>
-
-      <h:outputLabel value="〒 : "/>
-      <h:outputText id="zipCode" value="#{member.zipCode}"/>
-      <h:message for="zipCode"/>
-
-      <h:outputLabel value="住所 : "/>
-      <h:outputText id="address" value="#{member.address}"/>
-      <h:message for="address"/>
-
-      <h:outputLabel value="車番 : "/>
-      <h:outputText id="carNo" value="#{member.carNo}"/>
-      <h:message for="carNo"/>
-    </h:panelGrid>
-    <h:commandButton value="確　定" action="#{memberAdmin.confirm}"/>
-    <h:commandButton value="戻　る" action="#{memberAdmin.cancel}"/>
-    <!--<a href="/MPJ-web/log">log</a> -->
-  </h:form>
-  <hr/>
-  <h:outputText value="Mall Parking System on Java EE" style="font-style: italic"/><br/>
-  <h:outputLink value="/MPJ">HOME</h:outputLink>
-
-</h:body>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <f:view contracts='#{appConfig.theme}' >
+        <ui:composition template="/template.xhtml">
+            <ui:define name="title">
+                <h:outputText value="登録情報確認"></h:outputText>
+            </ui:define>
+            <ui:define name="body">
+                <h:form id="memberForm">
+                    <h:messages showDetail="true" errorStyle="color: red" warnStyle="color: orange"
+                                infoStyle="color: blue" globalOnly="true"/>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                             <div class="form-group">
+                        <h:outputLabel value="会員番号 : "/>
+                        <h:outputText id="seqNo" value="#{memberAdmin.member.seqNo}"/>
+                        <h:message for="seqNo"/>                                
+                            </div>
+                            <div class="form-group">
+                        <h:outputLabel value="名前 : "/>
+                        <h:outputText id="name" value="#{memberAdmin.member.name}"/>
+                        <h:message for="name"/>                                
+                            </div>
+                            <div class="form-group">
+                        <h:outputLabel value="Email : "/>
+                        <h:outputText id="email" value="#{memberAdmin.member.email}"/>
+                        <h:message for="email"/>                                
+                            </div>
+                            <div class="form-group">
+                        <h:outputLabel value="〒 : "/>
+                        <h:outputText id="zipCode" value="#{memberAdmin.member.zipCode}"/>
+                        <h:message for="zipCode"/>                                
+                            </div>
+                            <div class="form-group">
+                        <h:outputLabel value="住所 : "/>
+                        <h:outputText id="address" value="#{memberAdmin.member.address}"/>
+                        <h:message for="address"/>                              
+                            </div>
+                            <div class="form-group">
+                        <h:outputLabel value="車番 : "/>
+                        <h:outputText id="carNo" value="#{memberAdmin.member.carNo}"/>
+                        <h:message for="carNo"/>                               
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row text-center">
+                    <h:commandButton class="btn btn-primary" value="確　定" action="#{memberAdmin.confirm}"/>
+                    &nbsp;
+                    <h:commandButton class="btn btn-primary" value="戻　る" action="#{memberAdmin.cancel}"/>                        
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </f:view>
 </html>

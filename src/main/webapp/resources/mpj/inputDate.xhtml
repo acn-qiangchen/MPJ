@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <cc:interface>
+        <cc:attribute name="value" type="java.util.Date" required="true" />
+        <cc:attribute name="list" type="java.lang.String" default="" />
+        <cc:attribute name="step" type="java.lang.String" default="1" />
+        <cc:attribute name="min" type="java.util.Date" />
+        <cc:attribute name="max" type="java.util.Date" />
+        <cc:attribute name="readonly" type="java.lang.String" default="false" />
+        <cc:attribute name="required" type="java.lang.String" default="false" />
+        <cc:clientBehavior name="change" targets="date" event="change" />
+    </cc:interface>
+
+    <cc:implementation>
+        <!--
+        <h:outputStylesheet library="jquery" name="jquery-ui.css" />
+        <h:outputScript target="head" library="jquery" name="modernizr.js" />
+        <h:outputScript target="head" library="jquery" name="jquery-1.9.1.js" />
+        <h:outputScript target="head" library="jquery" name="jquery-ui.js" />
+
+        <script type="text/javascript">
+            if (!Modernizr.inputtypes.date) {
+                jQuery(function() {
+                    var id = '${cc.clientId}:date'.replace(/:/g, "\\:");
+                    jQuery("#" + id).datepicker({ dateFormat: 'yy-mm-dd' });
+                });
+            }
+        </script>
+        -->
+        
+        <div id="#{cc.clientId}">
+            <input jsf:id="date"
+                   type="date"
+                   jsf:value="#{cc.attrs.value}" 
+                   jsf:readonly="#{cc.attrs.readonly != 'false' ? 'true' : 'false'}" 
+                   jsf:required="#{cc.attrs.required != 'false' ? 'true' : 'false'}"
+                   step="#{cc.attrs.step}"
+                   min="#{cc.minDate}"
+                   max="#{cc.maxDate}"
+                   list="#{cc.attrs.list}">
+                <f:convertDateTime pattern="yyyy-MM-dd" />
+            </input>
+        </div>
+    </cc:implementation>
+</html>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <f:view contracts='#{appConfig.theme}' >
+        <ui:composition template="/template.xhtml">
+            <ui:define name="title">
+                <h:outputText value="設定"></h:outputText>
+            </ui:define>
+            <ui:define name="body">
+                <h:form id="newForm">
+                    <div class="row">
+                        <div class="col-xs-5"></div>
+                        <div class="col-xs-5 radio">
+                            <h:selectOneRadio value="#{appConfig.theme}" layout="pageDirection" >
+                                <f:selectItem itemValue="A" itemLabel="Theme - A"/>
+                                <f:selectItem itemValue="B" itemLabel="Theme - B"/>
+                            </h:selectOneRadio>
+                        </div>                        
+                        <div class="col-xs-2"></div>
+                    </div>
+                    <div class="row text-center">
+                        <h:commandButton class="btn btn-primary" value="登　録" action="#{appConfig.ok}"/>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
