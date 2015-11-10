@@ -8,44 +8,32 @@
 
     <cc:interface>
         <cc:attribute name="value" type="java.util.Date" required="true" />
-        <cc:attribute name="list" type="java.lang.String" default="" />
-        <cc:attribute name="step" type="java.lang.String" default="1" />
-        <cc:attribute name="min" type="java.util.Date" />
-        <cc:attribute name="max" type="java.util.Date" />
-        <cc:attribute name="readonly" type="java.lang.String" default="false" />
-        <cc:attribute name="required" type="java.lang.String" default="false" />
-        <cc:clientBehavior name="change" targets="date" event="change" />
     </cc:interface>
 
     <cc:implementation>
-        <!--
-        <h:outputStylesheet library="jquery" name="jquery-ui.css" />
-        <h:outputScript target="head" library="jquery" name="modernizr.js" />
-        <h:outputScript target="head" library="jquery" name="jquery-1.9.1.js" />
-        <h:outputScript target="head" library="jquery" name="jquery-ui.js" />
+        <h:outputScript library="bootstrap" name="js/vendor/moment.min.js" />
+        <h:outputScript library="bootstrap" name="js/vendor/bootstrap-datetimepicker.js" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-datetimepicker.min.css" />
+
+        <div class="form-group">
+            <div class='input-group date' id='#{cc.clientId}'>
+                <input type='text' class="form-control" jsf:id='date' jsf:value='#{cc.attrs.value}'>
+                    <f:convertDateTime pattern="yyyy/MM/dd HH:mm:ss" />
+                </input>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
 
         <script type="text/javascript">
-            if (!Modernizr.inputtypes.date) {
-                jQuery(function() {
-                    var id = '${cc.clientId}:date'.replace(/:/g, "\\:");
-                    jQuery("#" + id).datepicker({ dateFormat: 'yy-mm-dd' });
-                });
-            }
+            $(function () {
+                var id = '${cc.clientId}'.replace(/:/g, "\\:");
+                // different from java format
+                // http://momentjs.com/docs/#/displaying/format/
+                $("#" + id).datetimepicker({format: 'YYYY/MM/D HH:mm:ss'});
+            });
         </script>
-        -->
-        
-        <div id="#{cc.clientId}">
-            <input jsf:id="date"
-                   type="date"
-                   jsf:value="#{cc.attrs.value}" 
-                   jsf:readonly="#{cc.attrs.readonly != 'false' ? 'true' : 'false'}" 
-                   jsf:required="#{cc.attrs.required != 'false' ? 'true' : 'false'}"
-                   step="#{cc.attrs.step}"
-                   min="#{cc.minDate}"
-                   max="#{cc.maxDate}"
-                   list="#{cc.attrs.list}">
-                <f:convertDateTime pattern="yyyy-MM-dd" />
-            </input>
-        </div>
+
     </cc:implementation>
 </html>

@@ -6,7 +6,6 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:mpj="http://xmlns.jcp.org/jsf/composite/mpj"
-      xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <f:view contracts='#{appConfig.theme}' >
         <ui:composition template="/template.xhtml">
@@ -35,17 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <h:outputText value="InTime:"/>
-                                <!--<mpj:inputDate value="#{ticketAdmin.ticket.inTime}"  -->
-                                <!--
-                                <input type="datetime-local" jsf:value="#{ticketAdmin.ticket.inTime}" id="inTime" class="form-control" tittle="InTime">
-                                    <f:convertDateTime pattern="yyyy/MM/dd HH:mm:ss" />
-                                </input>
-                                --> 
-                                <!--
-                                <h:inputText id="inTime" class="form-control" value="#{ticketAdmin.ticket.inTime}" title="InTime" p:placeholder="yyyy/MM/dd HH:mm:ss">
-                                    <f:convertDateTime pattern="yyyy/MM/dd HH:mm:ss" />
-                                </h:inputText>
-                                -->
+                                <mpj:inputDate id="inTime" value="#{ticketAdmin.ticket.inTime}" p:class="form-control" p:tittle="InTime" />                                    
                             </div>
                             <div class="form-group">
                                 <h:outputText value="OutTime:"/>
