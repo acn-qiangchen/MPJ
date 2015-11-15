@@ -1,6 +1,6 @@
 .jumbotron_mpj {
     position: relative;
-    background: url("#{resource['images.jpeg']}") center center;
+    background: url("#{resource['hello-kitty_40278.jpg']}") center center;
     width: 100%;
     height: 100%;
     background-size: cover;

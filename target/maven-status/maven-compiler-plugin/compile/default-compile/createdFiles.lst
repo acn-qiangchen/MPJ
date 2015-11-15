@@ -28,6 +28,7 @@ com/tink/mpj/app/bean/MemberAdmin.class
 com/tink/mpj/common/groups/BeforeSave.class
 com/tink/mpj/common/logging/LoggingInterceptor.class
 com/tink/mpj/common/groups/BeforeSearch.class
+com/tink/mpj/trial/flowSample/FlowBean.class
 com/tink/sandbox/LogPageServlet.class
 com/tink/mpj/persistence/model/Plan_.class
 com/tink/mpj/common/constraint/Email.class

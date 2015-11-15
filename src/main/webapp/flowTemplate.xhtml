@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <h:outputScript library="bootstrap" name="js/vendor/jquery-1.11.2.js" />
+        <h:outputScript library="bootstrap" name="js/vendor/bootstrap.min.js" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-theme.css"/>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <div class="container">
+                <div class="page-header">
+                    <h1>
+                        <ui:insert name="title">Default Title</ui:insert>
+                    </h1>
+                </div>
+                <ui:insert name="content">Default Content </ui:insert>
+            </div>
+             <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10 text-center">
+                    <h:commandButton class="btn btn-default" value="to start page" action="flowSample"/>&nbsp;
+                    <h:commandButton class="btn btn-default" value="go to page2" action="page2"/>&nbsp;
+                    <h:commandButton class="btn btn-default" value="go to page3" action="page3"/>&nbsp;
+                    <h:commandButton class="btn btn-primary" value="end page flow" action="flowReturn"/>                        
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </h:form>
+    </h:body>
+</html>

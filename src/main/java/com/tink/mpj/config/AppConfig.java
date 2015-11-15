@@ -11,18 +11,10 @@ package com.tink.mpj.config;
  */
 public class AppConfig {
 
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
     /**
      * Theme of Application of a Session
      */
-    private String theme = "A";
+    private String theme = "";
 
     /**
      * when click ok button
@@ -34,6 +26,14 @@ public class AppConfig {
      * Creates a new instance of AppConfig
      */
     public AppConfig() {
+    }
+    
+        public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
     }
     
 }

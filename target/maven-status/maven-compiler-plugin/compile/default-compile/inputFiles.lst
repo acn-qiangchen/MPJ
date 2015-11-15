@@ -1,6 +1,7 @@
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/service/MemberService.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/bean/PlanConverter.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/bean/MemberController.java
+/Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/trial/flowSample/FlowBean.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/faces/component/ComponentInputDate.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/bean/util/JsfCrudELResolver.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/business/ejb/MemberFacade.java
@@ -8,8 +9,8 @@
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/sandbox/java/core/nio/LearnNIO.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/persistence/jpa/AbstractFacade.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/bean/util/JsfUtil.java
-/Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/bean/TicketConverter.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/sandbox/App.java
+/Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/app/bean/TicketConverter.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/common/constraint/CarNo.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/common/util/IFSeqNoGenerator.java
 /Users/shearer/Documents/sdbx/JavaEE/PJ/MPJ/MPJ-web/src/main/java/com/tink/mpj/common/util/TicketSeqNoGenerator.java

@@ -48,7 +48,7 @@ public class PlanController {
     private PagingInfo pagingInfo;
     @Resource
     private UserTransaction utx = null;
-    @PersistenceUnit(unitName = "MPJ01")
+    //@PersistenceUnit(unitName = "MPJ01")
     //private EntityManagerFactory emf = null;
 
     public PagingInfo getPagingInfo() {

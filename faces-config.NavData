@@ -10,8 +10,8 @@
         <Node id="index.html" x="894" y="32" zoom="true"/>
         <Node id="plan/Detail.jsp" x="1131" y="32" zoom="true"/>
         <Node id="member/newMember.xhtml" x="2480" y="32" zoom="true"/>
-        <Node id="member/searchMember.xhtml" x="34" y="32" zoom="true"/>
         <Node id="plan/New.jsp" x="2227" y="32" zoom="true"/>
+        <Node id="member/searchMember.xhtml" x="34" y="32" zoom="true"/>
         <Node id="welcomeJSF.jsp" x="1711" y="32" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations">

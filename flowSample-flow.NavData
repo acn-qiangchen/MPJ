@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="plan/List.jsp" x="400" y="150" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="650" y="150" zoom="true"/>
+        <Node id="plan/Edit.jsp" x="150" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="member/confirm.xhtml" x="1395" y="32" zoom="true"/>
+        <Node id="plan/Detail.jsp" x="1131" y="32" zoom="true"/>
+        <Node id="index.html" x="894" y="32" zoom="true"/>
+        <Node id="member/newMember.xhtml" x="2480" y="32" zoom="true"/>
+        <Node id="member/searchMember.xhtml" x="34" y="32" zoom="true"/>
+        <Node id="plan/New.jsp" x="2227" y="32" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="1711" y="32" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="plan/List.jsp" x="400" y="150" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="650" y="150" zoom="true"/>
+        <Node id="plan/Edit.jsp" x="150" y="300" zoom="true"/>
+    </Scope>
+</Scene>
