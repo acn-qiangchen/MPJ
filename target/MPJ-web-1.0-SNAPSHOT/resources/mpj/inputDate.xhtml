@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <cc:interface>
+        <cc:attribute name="value" type="java.util.Date" required="true" />
+    </cc:interface>
+
+    <cc:implementation>
+        <h:outputScript library="bootstrap" name="js/vendor/moment.min.js" />
+        <h:outputScript library="bootstrap" name="js/vendor/bootstrap-datetimepicker.js" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-datetimepicker.min.css" />
+
+        <div class="form-group">
+            <div class='input-group date' id='#{cc.clientId}'>
+                <input type='text' class="form-control" jsf:id='date' jsf:value='#{cc.attrs.value}'>
+                    <f:convertDateTime pattern="yyyy/MM/dd HH:mm:ss" />
+                </input>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function () {
+                var id = '${cc.clientId}'.replace(/:/g, "\\:");
+                // different from java format
+                // http://momentjs.com/docs/#/displaying/format/
+                $("#" + id).datetimepicker({format: 'YYYY/MM/D HH:mm:ss'});
+            });
+        </script>
+
+    </cc:implementation>
+</html>

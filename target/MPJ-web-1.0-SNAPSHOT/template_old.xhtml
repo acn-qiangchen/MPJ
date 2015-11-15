@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <h:outputScript library="bootstrap" name="js/vendor/jquery-1.11.2.js" />
+        <h:outputScript library="bootstrap" name="js/vendor/bootstrap.min.js" />
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-theme.css"/>
+    </h:head>
+
+    <h:body>
+        <div class="container-fluid">
+            <nav role="navigation" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                    
+                    <a href="#" class="navbar-brand">駐車料金管理システム</a>            
+                </div>
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-link">
+                        <li><h:link outcome="/member/newMember" value="会員登録"/></li>
+                        <li><h:link outcome="/member/searchMember" value="会員検索"/></li>
+                        <li><h:link outcome="/plan/List" value="料金プラン一覧"/></li>
+                        <li><h:link outcome="/ticket/List" value="チケット一覧"/></li>
+                    </ul>
+                </div>
+            </nav>
+            <div>
+                <h1>
+                    <ui:insert name="title">Default Title</ui:insert>
+                </h1>
+                <p>
+                    <ui:insert name="body">Default Body</ui:insert>
+                </p>
+                <hr/>
+                <h:outputText value="Mall Parking System on Java EE" style="font-style: italic"/><br/>
+                <h:outputLink value="/MPJ">HOME</h:outputLink>
+            </div>
+        </div>
+    </h:body>
+</html>
